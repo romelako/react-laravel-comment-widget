@@ -1,0 +1,40 @@
+/* BEGIN General styling */
+html, body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.title {
+    text-align: center;
+}
+
+.submit-button {
+    margin-top: 15px;
+}
+
+.loading {
+    text-align: right;
+}
+
+.loading img {
+    width: 75px;
+}
+/* END General styling */
+
+/* BEGIN Comment Styling */
+.comment-container {
+    margin-top: 20px;
+}
+
+.comment-wrapper {
+    border-top: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+    padding: 20px 0;
+}
+
+.comment-box {
+    border-left: 5px solid #ffb600;
+    padding: 15px;
+    background-color: #fef7e6;
+    border-radius: 3px;
+}
+/* END Comment Styling */
