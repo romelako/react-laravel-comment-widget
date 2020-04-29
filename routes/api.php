@@ -22,5 +22,17 @@ Route::get('/get_recent_comments', function(Request $request) {
 });
 
 Route::post('/store_comment', function(Request $request) {
+    $request->validate([
+        'author_name' => 'bail|required|regex:/^[A-Za-z\s]+$/',
+        'author_email' => 'bail|required|email',
+        'comment' => 'required'
+    ], [
+        'author_name.required' => "Please specify an author name",
+        'author_name.regex' => "Author name can only contain letters and spaces",
+        'author_email.required' => "Please specify an author email",
+        'author_email.email' => "Please enter a valid email",
+        'comment.required' => "Please enter a comment"
+    ]);
+
     return Comment::create($request->all());
 });

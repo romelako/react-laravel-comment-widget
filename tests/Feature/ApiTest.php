@@ -36,6 +36,6 @@ class ApiTest extends TestCase
             'author_email' => "email@email.com",
         ]);
 
-        $response->assertStatus(500);
+        $response->assertStatus(422);
     }
 }

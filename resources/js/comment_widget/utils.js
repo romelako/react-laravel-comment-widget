@@ -27,3 +27,14 @@ export function validate(state) {
 
     return errors;
 }
+
+export function formatErrorArray(errors) {
+    let formattedErrors = [];
+
+    for (let error of Object.values(errors)) {
+        // we are using the bail directive so there should be only 1 error per field
+        formattedErrors.push(error[0]);
+    }
+
+    return formattedErrors;
+}

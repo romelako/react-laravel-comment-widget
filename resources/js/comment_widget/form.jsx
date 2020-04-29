@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { mapStateToComment, validate } from "./utils";
+import { mapStateToComment, formatErrorArray } from "./utils";
 
 export default class Form extends Component {
     constructor(props) {
@@ -29,12 +29,6 @@ export default class Form extends Component {
         // reset the alert
         this.props.setAlert("", "", []);
 
-        let errors = validate(this.state);
-        if (errors.length > 0) {
-            this.props.setAlert("There were errors with your submission:", "danger", errors);
-            return;
-        }
-
         this.setState({ submitted: true });
 
         axios.post('/api/store_comment', mapStateToComment(this.state))
@@ -44,7 +38,7 @@ export default class Form extends Component {
                 this.props.setAlert("Successfully added comment!", "success");
             }).catch(error => {
                 this.setState({ submitted: false });
-                this.props.setAlert("There was an error submitting your comment!", "danger");
+                this.props.setAlert("There was an error submitting your comment:", "danger", formatErrorArray(error.response.data.errors));
             })
     }
 
