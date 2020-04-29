@@ -11,8 +11,9 @@ This is my version of the comment widget built using React and Laravel. This pro
 4. Set up your database of choice.
 5. Run the migrations with `php artisan migrate`
 6. Seed the database with `php artisan db:seed`.
-7. Run the development server with `php artisan serve`.
-8. Navigate to the homepage.
+7. Create an application encryption key with `php artisan key:generate`
+8. Run the development server with `php artisan serve`.
+9. Navigate to the homepage.
 
 ## Notes
 * I opted to use the built-in development server for ease. For more advanced projects I would usually use Docker.
