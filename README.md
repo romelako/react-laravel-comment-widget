@@ -9,9 +9,10 @@ This is my version of the comment widget built using React and Laravel. This pro
    * I have already transpiled the .jsx code into comment-widget-bundle.js so there is no need to install the npm dependencies.
 3. Create your .env file and make sure `ASSETS_URL` is in there.
 4. Set up your database of choice.
-5. Seed the database with `php artisan db:seed`.
-6. Run the development server with `php artisan serve`.
-7. Navigate to the homepage.
+5. Run the migrations with `php artisan migrate`
+6. Seed the database with `php artisan db:seed`.
+7. Run the development server with `php artisan serve`.
+8. Navigate to the homepage.
 
 ## Notes
 * I opted to use the built-in development server for ease. For more advanced projects I would usually use Docker.
