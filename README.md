@@ -23,7 +23,8 @@ This is my version of the comment widget built using React and Laravel. This pro
 
 ## Assumptions
 * I wasn't sure if "The comment list at the top is refreshed to show the latest at the top." meant that I should just prepend the newly-created comment to the list of comments (total of 6 comments) or just refresh and make sure that the comment is on top (5 comments). I implemented the latter. However, I would just append to my `state` variable the values of the input field before clearing it to implement the former.
-* I forewent doing validation on the back-end as I did validation on the front-end. If there was a use-case where developers can hit the API or for some reason we don't want to use front-end validation, I would perform the validation on the backend and return the errors in the response.
+* ~~I forewent doing validation on the back-end as I did validation on the front-end. If there was a use-case where developers can hit the API or for some reason we don't want to use front-end validation, I would perform the validation on the backend and return the errors in the response.~~
+   * **EDIT:** I decided that using Laravel's built-in validation methods would be more robust and would cover more use cases, making it more scalable.
 * I assumed an author name can only contain letters and spaces.
 * I used a short regex for the email validation for brevity.
 
