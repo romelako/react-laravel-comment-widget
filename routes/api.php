@@ -15,9 +15,9 @@ use App\Comment;
 |
 */
 
-Route::get('/get_recent_comments', function(Request $request) {
+Route::get('/get_recent_comments', function() {
     return Comment::orderBy('created_at', 'desc')
-        ->take(5)
+        ->take(config('app.recent_comment_count'))
         ->get();
 });
 

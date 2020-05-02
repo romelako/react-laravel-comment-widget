@@ -228,4 +228,6 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
     ],
+
+    'recent_comment_count' => 5
 ];
