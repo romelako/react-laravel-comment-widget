@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import Alert from "./alert.jsx";
-import Comments from "./comments.jsx";
-import Form from "./form.jsx";
+import Alert from "./Alert.jsx";
+import Comments from "./Comments.jsx";
+import Form from "./Form.jsx";
 import axios from "axios";
+import { FAILED_SERVER_COMMENTS } from "./constants";
 
 const FETCH_DELAY = 30000;
 
@@ -25,7 +26,7 @@ export default class App extends Component {
                     comments: response.data
                 });
             }).catch(_ => {
-                this.setAlert("Failed to grab the comments from the server!");
+                this.setAlert(FAILED_SERVER_COMMENTS);
             })
     }
 

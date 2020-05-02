@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
-import Comment from "./comment.jsx";
+import Comment from "./Comment.jsx";
 
 export default class Comments extends Component {
     render() {

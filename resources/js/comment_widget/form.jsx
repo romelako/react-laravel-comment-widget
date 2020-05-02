@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { mapStateToComment, formatErrorArray } from "./utils";
+import { COMMENT_SUCCESS, COMMENT_ERRORS } from "./constants";
 
 export default class Form extends Component {
     constructor(props) {
@@ -35,10 +36,10 @@ export default class Form extends Component {
             .then(_ => {
                 this.resetState();
                 this.props.fetchComments();
-                this.props.setAlert("Successfully added comment!", "success");
+                this.props.setAlert(COMMENT_SUCCESS, "success");
             }).catch(error => {
                 this.setState({ submitted: false });
-                this.props.setAlert("There was an error submitting your comment:", "danger", formatErrorArray(error.response.data.errors));
+                this.props.setAlert(COMMENT_ERRORS, "danger", formatErrorArray(error.response.data.errors));
             })
     }
 
