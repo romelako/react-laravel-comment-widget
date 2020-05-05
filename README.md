@@ -1,3 +1,5 @@
+![Laravel](https://github.com/romelako/react-laravel-comment-widget/workflows/Laravel/badge.svg)
+
 # React/Laravel Comment Widget
 
 ## Overview
